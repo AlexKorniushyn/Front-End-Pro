@@ -1,3 +1,6 @@
+const correctAnswer = 10;
+const incorrectAnswer = 0;
+let score = incorrectAnswer;
 const QUESTIONS = [
   {
     question: "Сколько хромосом у здорового человека?",
@@ -11,12 +14,12 @@ const QUESTIONS = [
   },
   {
     question: "Сколько хромосом у Путина?",
-    answer: 47,
+    answer: "47",
     type: "prompt",
   },
   {
     question: "Сколько тупых овец в московии (в млн)?",
-    answer: 144,
+    answer: "144",
     type: "prompt",
   },
   {
@@ -26,17 +29,17 @@ const QUESTIONS = [
   },
   {
     question: "Сколько черных пакетов выделяются на одного орка?",
-    answer: 1,
+    answer: "1",
     type: "prompt",
   },
   {
     question: "На сколько вы оцениваете работу ЗСУ от 1 до 10?",
-    answer: 10,
+    answer: "10",
     type: "prompt",
   },
   {
     question: "Со скольких позиций готовилось нападение на Беларусь?",
-    answer: 4,
+    answer: "4",
     type: "prompt",
   },
   {
@@ -56,29 +59,19 @@ const QUESTIONS = [
   },
 ];
 
-let correctAnswer = 10;
-
-let incorrectAnswer = 0;
-
 for (let i = 0; i < QUESTIONS.length; i++) {
-  answer = QUESTIONS[i].question;
+  let quetionsItem = QUESTIONS[i];
+  let answer;
 
-  if (QUESTIONS[i].type == "prompt") {
-    prompt(answer);
-  } else if (QUESTIONS[i].type == "confirm") {
-    confirm(answer);
-  } else {
+  if (quetionsItem.type === "prompt") {
+    answer = prompt(quetionsItem.question);
+  } else if (quetionsItem.type === "confirm") {
+    answer = confirm(quetionsItem.question);
+  }
+
+  if (answer === quetionsItem.answer) {
+    score += correctAnswer;
   }
 }
 
-let sumOfAnswerScore = QUESTIONS.reduce((acc, answer) => {
-  // if (answer === QUESTIONS.answer) {
-  //   correctAnswer;
-  // } else {
-  //   incorrectAnswer;
-  // }
-
-  return acc + correctAnswer + incorrectAnswer;
-}, 0);
-
-alert(` your score ${sumOfAnswerScore}`);
+alert("your score" + " " + score);
