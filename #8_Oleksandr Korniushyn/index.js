@@ -1,40 +1,46 @@
 function createCalculator(base) {
-  this.base = base;
+  let newCalc = base;
 
-  this.add = (value) => {
-    if (!isNaN(value)) {
-      this.base = this.base + value;
-    }
-    return NaN;
-  };
+  return {
+    add: (value) => {
+      if (!isNaN(value)) {
+        newCalc += value;
+      }
+    },
 
-  this.sub = (value) => {
-    if (!isNaN(value)) {
-      this.base = this.base - value;
-    }
-    return NaN;
-  };
+    sub: (value) => {
+      if (!isNaN(value)) {
+        newCalc -= value;
+      }
+    },
 
-  this.set = (value) => {
-    this.base = value;
-  };
+    set: (value) => {
+      if (!isNaN(value)) {
+        newCalc = value;
+      }
+    },
 
-  this.reset = () => {
-    this.base = base;
-  };
-  this.get = () => {
-    return this.base;
+    reset: () => {
+      newCalc = base;
+    },
+
+    get: () => {
+      return newCalc;
+    },
   };
 }
-const calc = new createCalculator(100);
+const calc = createCalculator(100);
 
 calc.add(10);
 calc.add(10);
-
+calc.add(10);
+calc.add("qwqeqe");
+calc.sub(10);
 console.log(calc.get());
 
-console.log(calc.add("qwe"));
-
+calc.set("qwqe");
+console.log(calc.get());
+calc.set(500);
 console.log(calc.get());
 calc.reset();
 console.log(calc.get());
