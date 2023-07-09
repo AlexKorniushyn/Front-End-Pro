@@ -1,10 +1,6 @@
 function Calculator(base) {
   this.base = 0;
 
-  function isNumber(num) {
-    return !isNaN(num) && typeof num === "number";
-  }
-
   if (isNumber(base)) {
     this.base = base;
   }
@@ -42,4 +38,6 @@ console.log(calc.get());
 calc.reset();
 console.log(calc.get());
 calc.add(10);
+console.log(calc.get());
+calc.add(30);
 console.log(calc.get());
