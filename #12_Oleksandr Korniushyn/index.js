@@ -6,9 +6,9 @@ btn.addEventListener("click", onButtonClick);
 
 function onButtonClick() {
   if (input.value != "") {
-    let list = document.createElement("li");
-    list.innerHTML = input.value;
-    ul.appendChild(list);
+    let liEl = document.createElement("li");
+    liEl.innerHTML = input.value;
+    ul.appendChild(liEl);
   } else {
     alert("The input field is empty, fill it in and press again!");
   }
