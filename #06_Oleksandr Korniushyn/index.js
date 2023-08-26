@@ -1,12 +1,9 @@
 // Написати цикли, які зможуть:
 
 // Вивести на сторінку в один рядок через кому числа від 10 до 20.
-// let i = 10;
-// do {
-//   document.write(` ${i}, `);
-//   i++;
-// } while (i < 20);
-// document.write(` ${i}.`);
+// for (i = 10; i <= 20; i++) {
+//   console.log(i);
+// }
 
 // Вивести квадрати чисел від 10 до 20.
 // for (i = 10; i <= 20; i++) {
@@ -14,8 +11,8 @@
 // }
 
 // Вивести таблицю множення на 7.
+// let x = 7;
 // for (i = 1; i <= 10; i++) {
-//   let x = 7;
 //   console.log(`${i} * ${x} = ${i * x}`);
 // }
 
@@ -23,27 +20,27 @@
 // let sum = 1;
 // for (i = 1; i <= 15; i++) {
 //   sum += i;
-//   console.log(sum);
 // }
+// console.log(sum);
 
 // Знайти добуток усіх цілих чисел від 15 до 35.
 // let mult = 15;
 // for (i = 15; i <= 35; i++) {
 //   mult *= i;
-//   console.log(mult);
 // }
+// console.log(mult);
 
 // Знайти середнє арифметичне всіх цілих чисел від 1 до 500.
 // let total = 1;
 // let quant = 500;
 // for (i = 1; i <= 500; i++) {
 //   total += i;
-//   average = total / quant;
 // }
+// average = total / quant;
 // console.log(average);
 
 // Вивести суму лише парних чисел в діапазоні від 30 до 80.
-// let sum = 30;
+// let sum = 0;
 // for (i = 30; i <= 80; i += 2) {
 //   sum += i;
 // }
